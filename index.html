@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Garnham H Bewley — East Grinstead's Favourite Estate Agents</title>
+<meta name="description" content="Established independent estate agents in the centre of East Grinstead. Sales, new homes and free valuations from Adam Garnham & Duncan Bewley. Call 01342 410 227.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "RealEstateAgent",
+  "name": "Garnham H Bewley",
+  "telephone": "+441342410227",
+  "email": "eastgrinstead@garnhamhbewley.co.uk",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "73-75 London Road",
+    "addressLocality": "East Grinstead",
+    "addressRegion": "West Sussex",
+    "postalCode": "RH19 1EQ",
+    "addressCountry": "GB"
+  }
+}
+</script>
+<style>
+/* ===== Garnham H Bewley: navy + modrá z loga, oranžový akcent, Manrope ===== */
+:root{
+  --navy:#183760;
+  --navy-deep:#0f2542;
+  --blue:#415ca0;
+  --blue-light:#9aa8d4;
+  --orange:#e08e00;
+  --orange-deep:#c67d00;
+  --grey:#4f4d49;
+  --muted:#8a8d95;
+  --bg:#ffffff;
+  --bg-soft:#f4f6fa;
+  --line:#e3e6ec;
+  --radius:12px;
+  --shadow:0 14px 40px rgba(24,55,96,.1);
+  --font:"Manrope",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:92px}
+body{font-family:var(--font);color:#232630;background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+.container{max-width:1120px;margin:0 auto;padding:0 24px}
+section{padding:88px 0}
+h1,h2{font-weight:800;letter-spacing:-.02em;line-height:1.1;color:var(--navy)}
+h2{font-size:clamp(28px,3.6vw,40px)}
+.dots{display:inline-flex;gap:6px;margin-bottom:16px}
+.dots i{width:11px;height:11px;border-radius:50%}
+.dots i:nth-child(1){background:var(--blue-light)}
+.dots i:nth-child(2){background:var(--blue)}
+.dots i:nth-child(3){background:var(--navy)}
+.section-head p{color:var(--muted);margin-top:12px;font-size:16.5px;max-width:60ch}
+
+/* topbar */
+.topbar{background:var(--navy-deep);color:#bcc7dd;font-size:12.5px;padding:8px 0}
+.topbar .container{display:flex;justify-content:space-between;gap:12px}
+.topbar strong{color:#fff;font-weight:700}
+.topbar .dot{width:7px;height:7px;border-radius:50%;display:inline-block;margin-right:7px;background:#3ecf7a;vertical-align:1px}
+.topbar .dot.shut{background:#ff7a70}
+@media(max-width:720px){.topbar .addr{display:none}}
+
+/* header */
+header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:84px;gap:18px}
+.logo img{height:48px;width:auto}
+.nav-links{display:flex;gap:26px;font-size:14px;font-weight:600}
+.nav-links a{color:var(--grey);padding:6px 0;position:relative}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--orange);transition:width .2s}
+.nav-links a:hover{color:var(--navy)}
+.nav-links a:hover::after{width:100%}
+.nav-cta{display:flex;align-items:center;gap:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;font-size:14.5px;padding:13px 26px;border-radius:9px;border:none;cursor:pointer;transition:background .15s,color .15s,transform .12s;font-family:var(--font)}
+.btn:active{transform:scale(.97)}
+.btn-orange{background:var(--orange);color:#fff;box-shadow:0 8px 22px rgba(224,142,0,.35)}
+.btn-orange:hover{background:var(--orange-deep)}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{background:var(--navy-deep)}
+.btn-line{background:transparent;border:1.5px solid var(--line);color:var(--navy)}
+.btn-line:hover{border-color:var(--orange);color:var(--orange-deep)}
+.btn-white-line{background:transparent;border:1.5px solid rgba(255,255,255,.5);color:#fff}
+.btn-white-line:hover{border-color:#fff;background:#fff;color:var(--navy)}
+.burger{display:none;background:none;border:none;cursor:pointer;width:44px;height:44px;flex-direction:column;justify-content:center;align-items:center;gap:5px}
+.burger span{width:23px;height:2.5px;background:var(--navy);border-radius:2px}
+@media(max-width:980px){
+  .nav-links{position:fixed;inset:84px 0 auto 0;background:#fff;flex-direction:column;gap:0;padding:8px 24px 20px;border-bottom:1px solid var(--line);display:none}
+  .nav-links.open{display:flex}
+  .nav-links a{padding:14px 0;border-bottom:1px solid var(--line);font-size:15.5px;width:100%}
+  .burger{display:flex}
+  .nav-cta .btn-line{display:none}
+}
+@media(max-width:560px){.logo img{height:40px}.nav-cta .btn-orange{padding:11px 16px;font-size:13px}}
+
+/* hero + search */
+.hero{background:linear-gradient(180deg,var(--bg-soft) 0%,#fff 100%);padding:88px 0 72px;border-bottom:1px solid var(--line)}
+.hero h1{font-size:clamp(34px,5vw,56px);max-width:17ch}
+.hero .sub{margin:20px 0 0;color:var(--muted);font-size:17px;max-width:56ch}
+.searchbar{margin-top:40px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:14px;display:grid;grid-template-columns:1.2fr 1fr 1fr auto;gap:10px}
+.searchbar select{padding:13px 14px;border:1px solid var(--line);border-radius:9px;font-family:var(--font);font-size:14.5px;color:#232630;background:#fff}
+.searchbar .btn{white-space:nowrap}
+.hero-trust{display:flex;flex-wrap:wrap;gap:14px 30px;margin-top:30px;font-size:13.5px;color:var(--grey);font-weight:600}
+.hero-trust span::before{content:"✓";color:var(--orange);font-weight:800;margin-right:7px}
+@media(max-width:860px){.searchbar{grid-template-columns:1fr 1fr}.searchbar .btn{grid-column:1/-1}}
+@media(max-width:560px){.searchbar{grid-template-columns:1fr}.hero{padding:60px 0 52px}}
+
+/* properties */
+.props{background:#fff}
+.props-head{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:36px}
+.rezi-chip{display:inline-flex;align-items:center;gap:8px;background:#eef2fb;border:1px solid #d7e0f5;color:var(--blue);font-size:12px;font-weight:700;border-radius:99px;padding:6px 14px}
+.rezi-chip i{width:8px;height:8px;border-radius:50%;background:#3ecf7a;animation:pulse 1.6s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.prop-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.prop-card{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff;transition:transform .2s,box-shadow .2s}
+.prop-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.prop-card .ph{position:relative;aspect-ratio:4/3;overflow:hidden}
+.prop-card .ph img{width:100%;height:100%;object-fit:cover}
+.prop-card .ph .tag{position:absolute;top:12px;left:12px;background:var(--navy);color:#fff;font-size:11px;font-weight:700;padding:5px 11px;border-radius:6px;letter-spacing:.04em}
+.prop-card .body{padding:18px 20px 20px}
+.prop-card h3{font-size:16.5px;color:var(--navy);font-weight:800}
+.prop-card p{font-size:13.5px;color:var(--muted);margin-top:4px}
+.prop-card .cta{margin-top:14px;font-size:13.5px;font-weight:700;color:var(--orange-deep)}
+.props-note{margin-top:22px;font-size:12.5px;color:var(--muted)}
+@media(max-width:860px){.prop-grid{grid-template-columns:1fr}}
+
+/* rezi band */
+.rezi{background:linear-gradient(165deg,var(--navy-deep) 0%,var(--navy) 70%,#1d4275 100%);color:#fff}
+.rezi h2{color:#fff}
+.rezi .lead{color:#b9c6de;margin-top:16px;max-width:58ch;font-size:16.5px}
+.rezi-steps{margin-top:44px;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.rezi-step{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);padding:26px}
+.rezi-step .n{width:36px;height:36px;border-radius:50%;background:var(--orange);color:#fff;font-weight:800;display:grid;place-items:center;font-size:15px;margin-bottom:14px}
+.rezi-step h3{font-size:16.5px;font-weight:800;color:#fff}
+.rezi-step p{font-size:13.5px;color:#b9c6de;margin-top:6px}
+.rezi .foot{margin-top:34px;font-size:13.5px;color:#8fa2c2}
+@media(max-width:860px){.rezi-steps{grid-template-columns:1fr}}
+
+/* valuation */
+.valuation{background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.valuation .container{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:start}
+.valuation .lead{color:var(--muted);margin-top:16px;font-size:16px;max-width:46ch}
+.val-points{margin-top:26px;display:flex;flex-direction:column;gap:12px;font-size:14.5px;color:var(--grey)}
+.val-points span::before{content:"✓";color:var(--orange);font-weight:800;margin-right:9px}
+.val-card{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:30px}
+.val-card h3{font-size:19px;font-weight:800;color:var(--navy);margin-bottom:4px}
+.val-card>p{font-size:13px;color:var(--muted);margin-bottom:16px}
+.val-card label{display:block;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--grey);margin:13px 0 6px}
+.val-card input,.val-card select{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:9px;font-family:var(--font);font-size:15px;background:#fff}
+.val-card input:focus{outline:none;border-color:var(--blue)}
+.val-card button{width:100%;margin-top:18px}
+.val-card .demo-note{margin-top:11px;font-size:11.5px;color:var(--muted);text-align:center}
+@media(max-width:900px){.valuation .container{grid-template-columns:1fr;gap:36px}}
+
+/* about + testimonials */
+.about .container{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center}
+.about p.body{color:var(--grey);margin-top:16px;font-size:16px}
+.founders{margin-top:26px;display:flex;gap:14px;flex-wrap:wrap}
+.founder{border:1px solid var(--line);border-radius:12px;padding:16px 20px;flex:1;min-width:200px}
+.founder b{display:block;color:var(--navy);font-size:15.5px}
+.founder span{font-size:13px;color:var(--muted)}
+.testis{display:flex;flex-direction:column;gap:16px}
+.testi{background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px}
+.testi p{font-size:14.5px;color:var(--grey);font-style:italic}
+.testi b{display:block;margin-top:10px;font-size:13px;color:var(--navy)}
+@media(max-width:900px){.about .container{grid-template-columns:1fr;gap:40px}}
+
+/* contact */
+.contact .cols{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:56px;align-items:start;margin-top:38px}
+.cline{padding:15px 0;border-bottom:1px solid var(--line);font-size:15px;display:flex;gap:18px}
+.cline .k{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);min-width:86px;padding-top:3px}
+.cline .v a{color:var(--blue);font-weight:700}
+.map-frame{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;min-height:430px;box-shadow:var(--shadow)}
+.map-frame iframe{width:100%;height:100%;border:0;min-height:430px}
+@media(max-width:860px){.contact .cols{grid-template-columns:1fr}.map-frame{min-height:320px}.map-frame iframe{min-height:320px}}
+
+/* footer */
+footer{background:var(--navy-deep);color:#93a3c0;padding:46px 0 100px;font-size:13.5px}
+footer .container{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+footer img{height:40px;width:auto;background:#fff;padding:6px 10px;border-radius:8px}
+footer a:hover{color:#fff}
+
+/* mobile bar */
+.mobile-bar{position:fixed;bottom:0;left:0;right:0;z-index:70;display:none;grid-template-columns:1fr 1.3fr;background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.12);padding:10px 14px calc(10px + env(safe-area-inset-bottom));gap:10px}
+.mobile-bar a{display:flex;align-items:center;justify-content:center;gap:7px;padding:13px 6px;font-weight:700;font-size:14px;border-radius:9px}
+.mobile-bar .call{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2)}
+.mobile-bar .val{background:var(--orange);color:#fff}
+@media(max-width:980px){.mobile-bar{display:grid}}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
+.reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<!-- topbar -->
+<div class="topbar">
+  <div class="container">
+    <div><span class="dot" id="topDot"></span><strong id="topStatus">Open today</strong> <span id="todayNote">— pop in or call</span></div>
+    <span class="addr">73–75 London Road, East Grinstead RH19 1EQ</span>
+  </div>
+</div>
+
+<!-- header -->
+<header>
+  <div class="container nav">
+    <a href="#" class="logo"><img src="assets/logo.jpg" alt="Garnham H Bewley"></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#properties">Properties</a>
+      <a href="#rezi">How listings work</a>
+      <a href="#valuation">Valuation</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-line" href="tel:+441342410227">☎ Call</a>
+      <a class="btn btn-orange" href="#valuation">Free Valuation</a>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- hero -->
+<div class="hero">
+  <div class="container">
+    <span class="dots"><i></i><i></i><i></i></span>
+    <h1>East Grinstead's favourite estate agents.</h1>
+    <p class="sub">Independent, established and run by the people whose names are above the door — Adam Garnham &amp; Duncan Bewley. Selling homes in East Grinstead and the surrounding villages.</p>
+    <div class="searchbar reveal">
+      <select><option>Any bedrooms</option><option>1+</option><option>2+</option><option>3+</option><option>4+</option><option>5+</option></select>
+      <select><option>Min price</option><option>£200,000</option><option>£300,000</option><option>£400,000</option><option>£500,000</option><option>£750,000</option></select>
+      <select><option>Max price</option><option>£300,000</option><option>£400,000</option><option>£500,000</option><option>£750,000</option><option>£1,000,000+</option></select>
+      <a class="btn btn-navy" href="#properties">Search properties</a>
+    </div>
+    <div class="hero-trust">
+      <span>Established independent agency</span>
+      <span>British Property Awards</span>
+      <span>Free, no-obligation valuations</span>
+    </div>
+  </div>
+</div>
+
+<!-- properties -->
+<section class="props" id="properties">
+  <div class="container">
+    <div class="props-head">
+      <div>
+        <span class="dots"><i></i><i></i><i></i></span>
+        <h2>Latest properties</h2>
+      </div>
+      <span class="rezi-chip"><i></i> LIVE — synced from your Rezi account</span>
+    </div>
+    <div class="prop-grid">
+      <div class="prop-card reveal">
+        <div class="ph"><span class="tag">FOR SALE</span><img src="assets/prop1.jpg" alt="Property for sale in East Grinstead"></div>
+        <div class="body"><h3>East Grinstead</h3><p>Full details, price and photos flow straight from Rezi on the live site.</p><div class="cta">View details →</div></div>
+      </div>
+      <div class="prop-card reveal">
+        <div class="ph"><span class="tag">FOR SALE</span><img src="assets/prop2.jpg" alt="Property for sale in East Grinstead"></div>
+        <div class="body"><h3>East Grinstead</h3><p>Full details, price and photos flow straight from Rezi on the live site.</p><div class="cta">View details →</div></div>
+      </div>
+      <div class="prop-card reveal">
+        <div class="ph"><span class="tag">FOR SALE</span><img src="assets/prop3.jpg" alt="Property for sale in East Grinstead"></div>
+        <div class="body"><h3>East Grinstead</h3><p>Full details, price and photos flow straight from Rezi on the live site.</p><div class="cta">View details →</div></div>
+      </div>
+    </div>
+    <p class="props-note">Preview note: these are your current listings' photos. On the live site every property — details, prices, floorplans, status — updates automatically from Rezi.</p>
+  </div>
+</section>
+
+<!-- rezi band -->
+<section class="rezi" id="rezi">
+  <div class="container">
+    <span class="dots"><i style="background:#5a7ab8"></i><i style="background:#8fa9d8"></i><i style="background:#fff"></i></span>
+    <h2>You keep working in Rezi.<br>The website keeps up by itself.</h2>
+    <p class="lead">Your team already runs everything through Rezi — so the new website plugs straight into it. Nothing new to learn, no double entry, no waiting for a web company to update a listing.</p>
+    <div class="rezi-steps">
+      <div class="rezi-step reveal"><div class="n">1</div><h3>Add the property in Rezi</h3><p>Exactly as you do today — photos, price, description, floorplan.</p></div>
+      <div class="rezi-step reveal"><div class="n">2</div><h3>It appears on the website</h3><p>Automatically, within the hour — including price changes and sold statuses.</p></div>
+      <div class="rezi-step reveal"><div class="n">3</div><h3>Enquiries land in your inbox</h3><p>Viewings and valuation requests go straight to eastgrinstead@garnhamhbewley.co.uk.</p></div>
+    </div>
+    <p class="foot">Your current site already uses Rezi for photos — we keep that connection and make it work harder for you.</p>
+  </div>
+</section>
+
+<!-- valuation -->
+<section class="valuation" id="valuation">
+  <div class="container">
+    <div>
+      <span class="dots"><i></i><i></i><i></i></span>
+      <h2>What's your home worth?</h2>
+      <p class="lead">Thinking of selling? Get an honest, local valuation from the people who've sold on your street — free, and with no obligation whatsoever.</p>
+      <div class="val-points">
+        <span>Local knowledge of schools, amenities and every road in town</span>
+        <span>Valued by the owners — not a trainee with a tablet</span>
+        <span>Straightforward advice, even if that advice is "wait"</span>
+      </div>
+    </div>
+    <div class="val-card reveal">
+      <h3>Arrange a FREE valuation</h3>
+      <p>Takes 30 seconds — we'll call you back to arrange a visit.</p>
+      <form id="valForm">
+        <label>Your name</label>
+        <input type="text" name="name" required placeholder="John Smith">
+        <label>Phone</label>
+        <input type="tel" name="phone" required placeholder="07…">
+        <label>Property postcode</label>
+        <input type="text" name="postcode" required placeholder="RH19 …">
+        <label>Property type</label>
+        <select name="type"><option>House</option><option>Flat / apartment</option><option>Bungalow</option><option>Land / other</option></select>
+        <button type="submit" class="btn btn-orange">Request my free valuation</button>
+        <div class="demo-note">Preview demonstration — on the live site this goes straight to your inbox, on a secure page.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- about + testimonials -->
+<section class="about" id="about">
+  <div class="container">
+    <div>
+      <span class="dots"><i></i><i></i><i></i></span>
+      <h2>The names above the door.</h2>
+      <p class="body">Garnham H Bewley is an established, independent estate agency in the centre of East Grinstead. The owners and founders each have an excellent track record in residential estate agency — and a wealth of local knowledge of schools, amenities and the surrounding villages.</p>
+      <div class="founders">
+        <div class="founder"><b>Adam Garnham</b><span>Owner &amp; founder</span></div>
+        <div class="founder"><b>Duncan Bewley</b><span>Owner &amp; founder</span></div>
+      </div>
+    </div>
+    <div class="testis">
+      <div class="testi reveal"><p>"Thank you so much for your help in getting us moving. You kept us up to date from start to finish which was a breath of fresh air."</p><b>— Maggie</b></div>
+      <div class="testi reveal"><p>"Thank you for your efforts of securing a sale on our property so quickly. We wish you continued success with your business."</p><b>— Mr &amp; Mrs Spencer</b></div>
+      <div class="testi reveal"><p>"THANK YOU. It is so great to deal with a local company — your knowledge was second to none and we would highly recommend you."</p><b>— Tracey</b></div>
+    </div>
+  </div>
+</section>
+
+<!-- contact -->
+<section class="contact" id="contact">
+  <div class="container">
+    <span class="dots"><i></i><i></i><i></i></span>
+    <h2>Come and see us.</h2>
+    <div class="cols">
+      <div>
+        <div class="cline"><span class="k">Office</span><span class="v">73–75 London Road,<br>East Grinstead, West Sussex RH19 1EQ</span></div>
+        <div class="cline"><span class="k">Phone</span><span class="v"><a href="tel:+441342410227">01342 410 227</a></span></div>
+        <div class="cline"><span class="k">E-mail</span><span class="v"><a href="mailto:eastgrinstead@garnhamhbewley.co.uk">eastgrinstead@garnhamhbewley.co.uk</a></span></div>
+        <div class="cline"><span class="k">Portals</span><span class="v">Rightmove · Zoopla · OnTheMarket</span></div>
+        <div style="margin-top:26px">
+          <a class="btn btn-orange" href="#valuation">Arrange a free valuation</a>
+        </div>
+      </div>
+      <div class="map-frame reveal">
+        <iframe title="Map — Garnham H Bewley, 73-75 London Road, East Grinstead" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Garnham+H+Bewley,+73-75+London+Road,+East+Grinstead+RH19+1EQ&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- footer -->
+<footer>
+  <div class="container">
+    <img src="assets/logo.jpg" alt="Garnham H Bewley">
+    <span>Independent estate agents · East Grinstead</span>
+    <span>© 2026 Garnham H Bewley Ltd · <a href="tel:+441342410227">01342 410 227</a></span>
+  </div>
+</footer>
+
+<!-- mobile bar -->
+<div class="mobile-bar">
+  <a class="call" href="tel:+441342410227">☎ Call</a>
+  <a class="val" href="#valuation">Free Valuation</a>
+</div>
+
+<script>
+// mobile nav
+const burger=document.getElementById('burger'),navLinks=document.getElementById('navLinks');
+burger.addEventListener('click',()=>navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+
+// jednoduchý stav kanceláře (Po–So přes den; přesné hodiny doplníme od klienta)
+(function(){
+  const parts=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/London',weekday:'short',hour:'numeric',hour12:false}).formatToParts(new Date());
+  const get=t=>parts.find(p=>p.type===t)?.value;
+  const day=get('weekday'),h=Number(get('hour'));
+  const open=day!=='Sun'&&h>=9&&h<17.5;
+  const topDot=document.getElementById('topDot'),topStatus=document.getElementById('topStatus');
+  if(!open){topDot.classList.add('shut');topStatus.textContent='Office closed';document.getElementById('todayNote').textContent='— leave a message or e-mail us';}
+})();
+
+// valuation form (demo)
+document.getElementById('valForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  this.innerHTML='<div style="text-align:center;padding:24px 4px"><div style="font-size:36px">✅</div><h3 style="font-size:19px;font-weight:800;color:#183760;margin-top:8px">Thank you!</h3><p style="font-size:14px;color:#8a8d95;margin-top:6px">We\'ve got your details and we\'ll call you back to arrange your free valuation.<br><small>(Preview demonstration — on the live site this goes straight to your inbox.)</small></p></div>';
+});
+
+// reveal
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
