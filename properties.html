@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Properties for Sale — Garnham H Bewley, East Grinstead</title>
+<meta name="description" content="All current properties for sale with Garnham H Bewley — East Grinstead's favourite independent estate agents. Call 01342 410 227.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#183760;--navy-deep:#0f2542;--blue:#415ca0;--blue-light:#9aa8d4;--orange:#ffb424;--orange-deep:#f59e0b;--grey:#4f4d49;--muted:#8a8d95;--bg:#fff;--bg-soft:#f4f6fa;--line:#e3e6ec;--radius:12px;--shadow:0 14px 40px rgba(24,55,96,.1);--font:"Manrope",sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--font);color:#232630;background:var(--bg-soft);line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.container{max-width:1120px;margin:0 auto;padding:0 24px}
+h1{font-weight:800;letter-spacing:-.02em;color:var(--navy);font-size:clamp(26px,3.4vw,38px)}
+.dots{display:inline-flex;gap:6px;margin-bottom:14px}
+.dots i{width:11px;height:11px;border-radius:50%}
+.dots i:nth-child(1){background:var(--blue-light)}.dots i:nth-child(2){background:var(--blue)}.dots i:nth-child(3){background:var(--navy)}
+header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:84px;gap:18px}
+.logo img{height:48px;width:auto}
+.nav-cta{display:flex;align-items:center;gap:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;font-size:14.5px;padding:13px 26px;border-radius:9px;border:none;cursor:pointer;font-family:var(--font)}
+.btn-orange{background:var(--orange);color:#14294d;box-shadow:0 8px 22px rgba(255,180,36,.4)}
+.btn-orange:hover{background:var(--orange-deep)}
+.btn-line{background:transparent;border:1.5px solid var(--line);color:var(--navy)}
+.btn-line:hover{border-color:var(--orange)}
+.page-head{background:#fff;border-bottom:1px solid var(--line);padding:44px 0 36px}
+.page-head p{color:var(--muted);margin-top:8px;font-size:15.5px}
+.prop-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;padding:44px 0 64px}
+.prop-card{display:block;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff;transition:transform .2s,box-shadow .2s}
+.prop-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.prop-card .ph{position:relative;aspect-ratio:4/3;overflow:hidden}
+.prop-card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.prop-card:hover .ph img{transform:scale(1.05)}
+.prop-card .tag{position:absolute;top:12px;left:12px;background:var(--navy);color:#fff;font-size:11px;font-weight:700;padding:5px 11px;border-radius:6px}
+.prop-card .body{padding:18px 20px 20px}
+.prop-card h3{font-size:17px;color:var(--navy);font-weight:800}
+.prop-card p{font-size:13.5px;color:var(--muted);margin-top:4px}
+.prop-card .meta{margin-top:8px;font-size:12.5px;font-weight:700;color:var(--grey)}
+.prop-card .cta{margin-top:12px;font-size:13.5px;font-weight:700;color:#a06c00}
+.note{padding-bottom:40px;font-size:12.5px;color:var(--muted)}
+footer{background:var(--navy-deep);color:#93a3c0;padding:36px 0;font-size:13.5px}
+footer .container{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+footer img{height:38px;background:#fff;padding:6px 10px;border-radius:8px}
+@media(max-width:860px){.prop-grid{grid-template-columns:1fr}}
+@media(max-width:560px){.logo img{height:40px}.btn{padding:11px 16px;font-size:13px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="index.html" class="logo"><img src="assets/logo.jpg" alt="Garnham H Bewley"></a>
+    <div class="nav-cta">
+      <a class="btn btn-line" href="tel:+441342410227">☎ Call</a>
+      <a class="btn btn-orange" href="index.html#valuation">Free Valuation</a>
+    </div>
+  </div>
+</header>
+
+<div class="page-head">
+  <div class="container">
+    <span class="dots"><i></i><i></i><i></i></span>
+    <h1>Properties for sale</h1>
+    <p id="count">Current listings with Garnham H Bewley</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="prop-grid" id="grid"></div>
+  <p class="note">Preview note: real, current listings from your website — on the live site this page updates automatically from your Rezi account. · <a href="index.html" style="color:var(--blue);font-weight:700">← Back to homepage</a></p>
+</div>
+
+<footer>
+  <div class="container">
+    <img src="assets/logo.jpg" alt="Garnham H Bewley">
+    <span>© 2026 Garnham H Bewley Ltd · <a href="tel:+441342410227" style="color:#fff;font-weight:600">01342 410 227</a></span>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script>
+const grid=document.getElementById('grid');
+document.getElementById('count').textContent=PROPERTIES.length+' current listings, highest price first';
+PROPERTIES.forEach(p=>{
+  const beds=p.kf['Bedrooms']??0,baths=p.kf['Bathrooms']??0,recs=p.kf['Receptions']??0;
+  const a=document.createElement('a');
+  a.className='prop-card';
+  a.href='property.html?id='+p.id;
+  a.innerHTML=`<div class="ph"><span class="tag">FOR SALE</span><img src="${p.photos[0]}" alt="Property for sale — ${p.addr}" loading="lazy"></div>
+    <div class="body"><h3>${p.price}</h3><p>${p.addr}</p>
+    <div class="meta">${beds>0?beds+' bed · ':''}${baths} bath${recs>0?' · '+recs+' reception':''}</div>
+    <div class="cta">View full details →</div></div>`;
+  grid.appendChild(a);
+});
+</script>
+</body>
+</html>

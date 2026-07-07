@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Property for Sale — Garnham H Bewley, East Grinstead</title>
+<meta name="description" content="Property for sale with Garnham H Bewley — East Grinstead's favourite independent estate agents. Call 01342 410 227 to arrange a viewing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#183760;--navy-deep:#0f2542;--blue:#415ca0;--blue-light:#9aa8d4;--orange:#ffb424;--orange-deep:#f59e0b;--grey:#4f4d49;--muted:#8a8d95;--bg:#fff;--bg-soft:#f4f6fa;--line:#e3e6ec;--radius:12px;--shadow:0 14px 40px rgba(24,55,96,.1);--font:"Manrope",sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--font);color:#232630;background:var(--bg-soft);line-height:1.65;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.container{max-width:1120px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:84px;gap:18px}
+.logo img{height:48px;width:auto}
+.nav-cta{display:flex;align-items:center;gap:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;font-size:14.5px;padding:13px 26px;border-radius:9px;border:none;cursor:pointer;font-family:var(--font)}
+.btn-orange{background:var(--orange);color:#14294d;box-shadow:0 8px 22px rgba(255,180,36,.4)}
+.btn-orange:hover{background:var(--orange-deep)}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{background:var(--navy-deep)}
+.btn-line{background:transparent;border:1.5px solid var(--line);color:var(--navy)}
+.btn-line:hover{border-color:var(--orange)}
+.crumb{padding:18px 0 0;font-size:13.5px}
+.crumb a{color:var(--blue);font-weight:700}
+.wrap{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,.85fr);gap:28px;padding:20px 0 56px;align-items:start}
+.gallery{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.gallery .main{aspect-ratio:3/2;overflow:hidden;position:relative}
+.gallery .main img{width:100%;height:100%;object-fit:cover}
+.gallery .main .tag{position:absolute;top:14px;left:14px;background:var(--navy);color:#fff;font-size:11.5px;font-weight:700;padding:6px 13px;border-radius:6px}
+.thumbs{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;padding:6px}
+.thumbs img{aspect-ratio:4/3;object-fit:cover;border-radius:6px;cursor:pointer;border:2px solid transparent}
+.thumbs img.active{border-color:var(--orange)}
+.desc-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px 28px;margin-top:22px}
+.desc-card h2{font-size:19px;font-weight:800;color:var(--navy);margin-bottom:12px}
+.desc-card p{font-size:15px;color:var(--grey);margin-bottom:12px}
+.side{position:sticky;top:104px}
+.side-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px 26px;box-shadow:var(--shadow)}
+.price{font-size:30px;font-weight:800;color:var(--navy);letter-spacing:-.01em}
+.addr{font-size:14.5px;color:var(--muted);margin-top:4px}
+.pid{font-size:11.5px;color:var(--muted);margin-top:2px}
+.feats{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.feat{background:var(--bg-soft);border:1px solid var(--line);border-radius:8px;padding:7px 12px;font-size:12.5px;font-weight:700;color:var(--grey)}
+.side-card .btn{width:100%;margin-top:10px}
+.viewing{margin-top:18px;border-top:1px solid var(--line);padding-top:16px;font-size:12.5px;color:var(--muted)}
+.awards-mini{display:flex;align-items:center;gap:12px;margin-top:18px;border-top:1px solid var(--line);padding-top:16px}
+.awards-mini img{height:56px}
+.awards-mini span{font-size:12px;color:var(--muted)}
+.note{padding-bottom:44px;font-size:12.5px;color:var(--muted)}
+footer{background:var(--navy-deep);color:#93a3c0;padding:36px 0;font-size:13.5px}
+footer .container{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+footer img{height:38px;background:#fff;padding:6px 10px;border-radius:8px}
+.mobile-bar{position:fixed;bottom:0;left:0;right:0;z-index:70;display:none;grid-template-columns:1fr 1.3fr;background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.12);padding:10px 14px calc(10px + env(safe-area-inset-bottom));gap:10px}
+.mobile-bar a{display:flex;align-items:center;justify-content:center;gap:7px;padding:13px 6px;font-weight:700;font-size:14px;border-radius:9px}
+.mobile-bar .call{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2)}
+.mobile-bar .book{background:var(--orange);color:#14294d}
+@media(max-width:900px){.wrap{grid-template-columns:1fr}.side{position:static}.mobile-bar{display:grid}footer{padding-bottom:96px}}
+@media(max-width:560px){.logo img{height:40px}.nav-cta .btn{padding:11px 14px;font-size:13px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="index.html" class="logo"><img src="assets/logo.jpg" alt="Garnham H Bewley"></a>
+    <div class="nav-cta">
+      <a class="btn btn-line" href="tel:+441342410227">☎ Call</a>
+      <a class="btn btn-orange" href="#" id="bookBtn">Arrange a Viewing</a>
+    </div>
+  </div>
+</header>
+
+<div class="container crumb"><a href="properties.html">← Back to all properties</a></div>
+
+<div class="container wrap">
+  <div>
+    <div class="gallery">
+      <div class="main"><span class="tag">FOR SALE</span><img id="mainImg" src="" alt="Property photo"></div>
+      <div class="thumbs" id="thumbs"></div>
+    </div>
+    <div class="desc-card">
+      <h2>Property description</h2>
+      <div id="desc"></div>
+    </div>
+  </div>
+
+  <div class="side">
+    <div class="side-card">
+      <div class="price" id="price"></div>
+      <div class="addr" id="addr"></div>
+      <div class="pid" id="pid"></div>
+      <div class="feats" id="feats"></div>
+      <a class="btn btn-orange" href="#" id="bookBtn2">Arrange a Viewing</a>
+      <a class="btn btn-navy" href="tel:+441342410227">☎ 01342 410 227</a>
+      <a class="btn btn-line" href="index.html#valuation">Selling? Free valuation</a>
+      <div class="viewing">On the live website this button sends a viewing request straight to your inbox — pre-filled with the property details.</div>
+      <div class="awards-mini">
+        <img src="assets/awards.jpg" alt="British Property Awards 2021 Gold Winner">
+        <span>British Property Awards 2021 Gold Winner · Best Estate Agent Guide 2021 — Exceptional</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container note">Preview note: photos, price, key features and the full description are your real listing data. On the live site every listing loads automatically from your Rezi account.</div>
+
+<footer>
+  <div class="container">
+    <img src="assets/logo.jpg" alt="Garnham H Bewley">
+    <span>© 2026 Garnham H Bewley Ltd · 73–75 London Road, East Grinstead</span>
+  </div>
+</footer>
+
+<div class="mobile-bar">
+  <a class="call" href="tel:+441342410227">☎ Call</a>
+  <a class="book" href="#" id="bookBtn3">Arrange a Viewing</a>
+</div>
+
+<script src="data.js"></script>
+<script>
+const id=new URLSearchParams(location.search).get('id');
+const p=PROPERTIES.find(x=>x.id===id)||PROPERTIES[0];
+document.title=p.price+' — '+p.addr+' | Garnham H Bewley';
+document.getElementById('price').textContent=p.price;
+document.getElementById('addr').textContent=p.addr;
+document.getElementById('pid').textContent='Ref: '+p.id;
+const main=document.getElementById('mainImg');
+main.src=p.photos[0];
+main.alt='Property for sale — '+p.addr;
+const thumbs=document.getElementById('thumbs');
+p.photos.forEach((ph,i)=>{
+  const t=document.createElement('img');
+  t.src=ph;t.alt='Photo '+(i+1);
+  if(i===0)t.classList.add('active');
+  t.addEventListener('click',()=>{main.src=ph;thumbs.querySelectorAll('img').forEach(x=>x.classList.remove('active'));t.classList.add('active')});
+  thumbs.appendChild(t);
+});
+const order=['Bedrooms','Bathrooms','Receptions','Garages','Gardens','Parking Spaces'];
+const icons={Bedrooms:'🛏',Bathrooms:'🛁',Receptions:'🛋',Garages:'🚗',Gardens:'🌿','Parking Spaces':'🅿'};
+const feats=document.getElementById('feats');
+order.forEach(k=>{
+  const v=p.kf[k];
+  if(v!==undefined&&(v>0||k==='Bedrooms'||k==='Bathrooms')){
+    const el=document.createElement('span');
+    el.className='feat';
+    el.textContent=icons[k]+' '+v+' '+(v===1?k.replace(/s$/,'').replace('Parking Space','parking space'):k.toLowerCase());
+    feats.appendChild(el);
+  }
+});
+const desc=document.getElementById('desc');
+p.desc.forEach(par=>{const e=document.createElement('p');e.textContent=par;desc.appendChild(e)});
+const mail=`mailto:eastgrinstead@garnhamhbewley.co.uk?subject=${encodeURIComponent('Viewing request — '+p.addr+' (Ref '+p.id+')')}&body=${encodeURIComponent('Hi, I am interested in '+p.addr+', '+p.price+' (Ref '+p.id+'). Please contact me to arrange a viewing.')}`;
+['bookBtn','bookBtn2','bookBtn3'].forEach(b=>document.getElementById(b).href=mail);
+</script>
+</body>
+</html>

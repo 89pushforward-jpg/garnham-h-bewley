@@ -32,8 +32,8 @@
   --navy-deep:#0f2542;
   --blue:#415ca0;
   --blue-light:#9aa8d4;
-  --orange:#e08e00;
-  --orange-deep:#c67d00;
+  --orange:#ffb424;
+  --orange-deep:#f59e0b;
   --grey:#4f4d49;
   --muted:#8a8d95;
   --bg:#ffffff;
@@ -80,12 +80,12 @@ header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.97);backdro
 .nav-cta{display:flex;align-items:center;gap:10px}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;font-size:14.5px;padding:13px 26px;border-radius:9px;border:none;cursor:pointer;transition:background .15s,color .15s,transform .12s;font-family:var(--font)}
 .btn:active{transform:scale(.97)}
-.btn-orange{background:var(--orange);color:#fff;box-shadow:0 8px 22px rgba(224,142,0,.35)}
-.btn-orange:hover{background:var(--orange-deep)}
+.btn-orange{background:var(--orange);color:#14294d;box-shadow:0 8px 22px rgba(255,180,36,.4)}
+.btn-orange:hover{background:var(--orange-deep);color:#14294d}
 .btn-navy{background:var(--navy);color:#fff}
 .btn-navy:hover{background:var(--navy-deep)}
 .btn-line{background:transparent;border:1.5px solid var(--line);color:var(--navy)}
-.btn-line:hover{border-color:var(--orange);color:var(--orange-deep)}
+.btn-line:hover{border-color:var(--orange);color:#a06c00}
 .btn-white-line{background:transparent;border:1.5px solid rgba(255,255,255,.55);color:#fff}
 .btn-white-line:hover{border-color:#fff;background:#fff;color:var(--navy)}
 .burger{display:none;background:none;border:none;cursor:pointer;width:44px;height:44px;flex-direction:column;justify-content:center;align-items:center;gap:5px}
@@ -134,7 +134,7 @@ header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.97);backdro
 .prop-card .body{padding:18px 20px 20px}
 .prop-card h3{font-size:16.5px;color:var(--navy);font-weight:800}
 .prop-card p{font-size:13.5px;color:var(--muted);margin-top:4px}
-.prop-card .cta{margin-top:14px;font-size:13.5px;font-weight:700;color:var(--orange-deep)}
+.prop-card .cta{margin-top:14px;font-size:13.5px;font-weight:700;color:#a06c00}
 .props-note{margin-top:22px;font-size:12.5px;color:var(--muted)}
 @media(max-width:860px){.prop-grid{grid-template-columns:1fr}}
 
@@ -201,7 +201,7 @@ footer a:hover{color:#fff}
 .mobile-bar{position:fixed;bottom:0;left:0;right:0;z-index:70;display:none;grid-template-columns:1fr 1.3fr;background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.12);padding:10px 14px calc(10px + env(safe-area-inset-bottom));gap:10px}
 .mobile-bar a{display:flex;align-items:center;justify-content:center;gap:7px;padding:13px 6px;font-weight:700;font-size:14px;border-radius:9px}
 .mobile-bar .call{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2)}
-.mobile-bar .val{background:var(--orange);color:#fff}
+.mobile-bar .val{background:var(--orange);color:#14294d}
 @media(max-width:980px){.mobile-bar{display:grid}}
 
 /* reveal */
@@ -241,7 +241,7 @@ footer a:hover{color:#fff}
   <div class="container nav">
     <a href="#" class="logo"><img src="assets/logo.jpg" alt="Garnham H Bewley"></a>
     <nav class="nav-links" id="navLinks">
-      <a href="#properties">Properties</a>
+      <a href="properties.html">Properties</a>
       <a href="#why">Why Us</a>
       <a href="#valuation">Valuation</a>
       <a href="#about">About</a>
@@ -254,6 +254,20 @@ footer a:hover{color:#fff}
     </div>
   </div>
 </header>
+
+<!-- awards strip -->
+<div style="background:#fff;border-bottom:1px solid var(--line)">
+  <div class="container" style="display:flex;align-items:center;gap:26px;padding-top:18px;padding-bottom:18px;flex-wrap:wrap;justify-content:center">
+    <img src="assets/awards.jpg" alt="British Property Awards 2021 Gold Winner and Best Estate Agent Guide 2021 Exceptional" style="height:86px;width:auto">
+    <div style="display:flex;gap:26px;flex-wrap:wrap;align-items:center">
+      <div><b style="color:var(--navy);font-size:14.5px;display:block">British Property Awards 2021</b><span style="font-size:12.5px;color:var(--muted)">Gold Winner — Estate Agent in East Grinstead</span></div>
+      <div style="width:1px;height:34px;background:var(--line)"></div>
+      <div><b style="color:var(--navy);font-size:14.5px;display:block">Best Estate Agent Guide 2021</b><span style="font-size:12.5px;color:var(--muted)">Rated Exceptional — Sales</span></div>
+      <div style="width:1px;height:34px;background:var(--line)"></div>
+      <div><b style="color:var(--navy);font-size:14.5px;display:block">Top selling agent 2013–2021</b><span style="font-size:12.5px;color:var(--muted)">*according to an independent report</span></div>
+    </div>
+  </div>
+</div>
 
 <!-- hero s velkým fotem -->
 <div class="hero">
@@ -289,10 +303,10 @@ footer a:hover{color:#fff}
         <span class="dots"><i></i><i></i><i></i></span>
         <h2>Latest properties</h2>
       </div>
-      <a class="btn btn-line" href="#contact">Register for new listings</a>
+      <a class="btn btn-line" href="properties.html">View all 12 properties →</a>
     </div>
     <div class="prop-grid" id="propGrid"></div>
-    <p class="props-note">Preview note: these are your real, current listings — photos, prices and descriptions taken from your website. On the live site they update automatically as your listings change.</p>
+    <p class="props-note">Preview note: these are your real, current listings — photos, prices, key features and full descriptions taken from your website. On the live site they update automatically as your listings change.</p>
   </div>
 </section>
 
@@ -402,6 +416,7 @@ footer a:hover{color:#fff}
   <a class="val" href="#valuation">Free Valuation</a>
 </div>
 
+<script src="data.js"></script>
 <script>
 // mobile nav
 const burger=document.getElementById('burger'),navLinks=document.getElementById('navLinks');
@@ -424,53 +439,18 @@ document.getElementById('valForm').addEventListener('submit',function(e){
   this.innerHTML='<div style="text-align:center;padding:24px 4px"><div style="font-size:36px">✅</div><h3 style="font-size:19px;font-weight:800;color:#183760;margin-top:8px">Thank you!</h3><p style="font-size:14px;color:#8a8d95;margin-top:6px">We\'ve got your details and we\'ll call you back to arrange your free valuation.<br><small>(Preview demonstration — on the live site this goes straight to your inbox.)</small></p></div>';
 });
 
-// ---- nemovitosti: skutečná data z jejich webu (8. 7. 2026) ----
-const LISTINGS=[
-  {img:'assets/prop1.jpg',loc:'East Grinstead',price:'£199,500',beds:2,type:'First floor apartment',desc:'Situated in the heart of East Grinstead, this beautifully presented two-bedroom first floor apartment is ideally located within easy walking distance of the town centre and the station.'},
-  {img:'assets/prop2.jpg',loc:'East Grinstead',price:'£190,000',beds:1,type:'First floor apartment',desc:'A truly luxurious living experience in the heart of East Grinstead. Nestled on the first floor is a one double bedroom apartment with a stunning contemporary finish throughout.'},
-  {img:'assets/prop3.jpg',loc:'East Grinstead',price:'£180,000',beds:1,type:'First floor flat',desc:'One double bedroom first floor flat, located just minutes from the main line train station — ideal for commuters and first-time buyers alike.'},
-  {img:'assets/prop4.jpg',loc:'Felbridge',price:'£175,000',beds:1,type:'Retirement apartment (60+)',desc:'A beautifully spacious ground floor retirement apartment, exclusively available for those aged 60 and over, set in well-kept communal grounds.'},
-  {img:'assets/prop5.jpg',loc:'Lingfield',price:'£145,000',beds:2,type:'First floor retirement property',desc:'Two bedroom first floor retirement property which has been modernised to create bright, comfortable living close to the village amenities.'},
-  {img:'assets/prop6.jpg',loc:'Turners Hill',price:'£130,000',beds:1,type:'Park home',desc:'A spacious and excellently positioned one-bedroom park home, set within a wooded, well-maintained residential park.'}
-];
+// ---- nejnovější nemovitosti z data.js (skutečná data z jejich webu) ----
 const grid=document.getElementById('propGrid');
-LISTINGS.forEach((p,i)=>{
-  const el=document.createElement('div');
-  el.className='prop-card reveal';
-  el.innerHTML=`<div class="ph"><span class="tag">FOR SALE</span><img src="${p.img}" alt="${p.type} for sale in ${p.loc}"></div>
-    <div class="body"><h3>${p.price} · ${p.loc}</h3><p>${p.beds} bed ${p.type.toLowerCase()}</p><div class="cta">View details →</div></div>`;
-  el.addEventListener('click',()=>openModal(i));
-  grid.appendChild(el);
+PROPERTIES.slice(0,6).forEach(p=>{
+  const beds=p.kf['Bedrooms']??0, baths=p.kf['Bathrooms']??0;
+  const a=document.createElement('a');
+  a.className='prop-card reveal';
+  a.href='property.html?id='+p.id;
+  a.style.display='block';
+  a.innerHTML=`<div class="ph"><span class="tag">FOR SALE</span><img src="${p.photos[0]}" alt="Property for sale — ${p.addr}"></div>
+    <div class="body"><h3>${p.price} · ${p.addr.split(',')[0]}</h3><p>${p.addr}</p><p style="margin-top:6px;font-weight:600;color:var(--grey)">${beds>0?beds+' bed · ':''}${baths} bath</p><div class="cta">View full details →</div></div>`;
+  grid.appendChild(a);
 });
-// modal
-const modal=document.createElement('div');
-modal.className='pmodal';
-modal.innerHTML=`<div class="backdrop"></div><div class="box">
-  <div class="photo"><span class="tag">FOR SALE</span><img alt=""><button class="close" aria-label="Close">✕</button></div>
-  <div class="inner">
-    <div class="price"></div>
-    <div class="meta"></div>
-    <p class="desc"></p>
-    <p class="note">Preview: details from your current listing. On the live website this page shows the full description, every photo, floorplan and a "Book a Viewing" form.</p>
-    <div class="actions">
-      <a class="btn btn-orange" href="tel:+441342410227">☎ Call about this property</a>
-      <a class="btn btn-line" href="mailto:eastgrinstead@garnhamhbewley.co.uk">I'm interested — e-mail us</a>
-    </div>
-  </div></div>`;
-document.body.appendChild(modal);
-function openModal(i){
-  const p=LISTINGS[i];
-  modal.querySelector('.photo img').src=p.img;
-  modal.querySelector('.price').textContent=p.price+' — '+p.loc;
-  modal.querySelector('.meta').innerHTML=`<span>🛏 ${p.beds} bedroom${p.beds>1?'s':''}</span><span>🏠 ${p.type}</span><span>📍 ${p.loc}</span>`;
-  modal.querySelector('.desc').textContent=p.desc;
-  modal.classList.add('open');
-  document.body.style.overflow='hidden';
-}
-function closeModal(){modal.classList.remove('open');document.body.style.overflow=''}
-modal.querySelector('.backdrop').addEventListener('click',closeModal);
-modal.querySelector('.close').addEventListener('click',closeModal);
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
 
 // reveal
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
