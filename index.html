@@ -113,6 +113,11 @@ header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.97);backdro
 .hero-trust{display:flex;flex-wrap:wrap;gap:12px 30px;margin-top:28px;font-size:13.5px;color:#e8edf6;font-weight:600}
 .hero-trust span::before{content:"✓";color:var(--orange);font-weight:800;margin-right:7px}
 .hero-trust small{display:block;font-weight:500;color:#aab8d0;font-size:11px;margin-top:2px}
+.hero-review{margin-top:26px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(6px);border-radius:12px;padding:14px 20px;font-size:14px;max-width:720px}
+.hero-review .stars{color:var(--orange);letter-spacing:2px;font-size:16px}
+.hero-review em{color:#eef2f9;font-style:italic}
+.hero-review b{color:#c3cfe4;font-weight:600;font-size:12.5px}
+.hero-review a{color:#fff;font-weight:700;font-size:12.5px;border-bottom:1px solid rgba(255,255,255,.5);margin-left:auto}
 @media(max-width:860px){.searchbar{grid-template-columns:1fr 1fr}.searchbar .btn{grid-column:1/-1}}
 @media(max-width:560px){.searchbar{grid-template-columns:1fr}.hero .inner{padding:72px 0 60px}}
 
@@ -168,9 +173,13 @@ header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.97);backdro
 .founder b{display:block;color:var(--navy);font-size:15.5px}
 .founder span{font-size:13px;color:var(--muted)}
 .testis{display:flex;flex-direction:column;gap:16px}
-.testi{background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px}
-.testi p{font-size:14.5px;color:var(--grey);font-style:italic}
+.testi{background:#fff;border:1px solid var(--line);border-left:4px solid var(--orange);border-radius:var(--radius);padding:22px 24px;box-shadow:var(--shadow)}
+.testi .stars{color:var(--orange);letter-spacing:2px;font-size:15px;margin-bottom:8px}
+.testi p{font-size:15px;color:var(--grey);font-style:italic}
 .testi b{display:block;margin-top:10px;font-size:13px;color:var(--navy)}
+.testis-head{display:flex;align-items:center;gap:12px;margin-bottom:4px}
+.testis-head .big-stars{color:var(--orange);font-size:22px;letter-spacing:3px}
+.testis-head span{font-size:13px;color:var(--muted);font-weight:600}
 @media(max-width:900px){.about .container{grid-template-columns:1fr;gap:40px}}
 
 /* contact */
@@ -198,6 +207,23 @@ footer a:hover{color:#fff}
 /* reveal */
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
 .reveal.in{opacity:1;transform:none}
+
+/* property modal */
+.pmodal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:20px}
+.pmodal.open{display:flex}
+.pmodal .backdrop{position:absolute;inset:0;background:rgba(15,37,66,.78);backdrop-filter:blur(4px)}
+.pmodal .box{position:relative;background:#fff;border-radius:16px;max-width:760px;width:100%;max-height:92vh;overflow-y:auto;box-shadow:0 40px 120px rgba(0,0,0,.5)}
+.pmodal .photo{position:relative}
+.pmodal .photo img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:16px 16px 0 0}
+.pmodal .photo .tag{position:absolute;top:16px;left:16px;background:var(--navy);color:#fff;font-size:11.5px;font-weight:700;padding:6px 13px;border-radius:6px}
+.pmodal .close{position:absolute;top:14px;right:14px;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.94);border:none;font-size:17px;cursor:pointer;font-weight:700;color:var(--navy)}
+.pmodal .inner{padding:26px 30px 30px}
+.pmodal .price{font-size:28px;font-weight:800;color:var(--navy)}
+.pmodal .meta{display:flex;gap:18px;flex-wrap:wrap;margin-top:6px;font-size:13.5px;color:var(--muted);font-weight:600}
+.pmodal .desc{margin-top:16px;font-size:15px;color:var(--grey)}
+.pmodal .note{margin-top:14px;font-size:12px;color:var(--muted)}
+.pmodal .actions{margin-top:22px;display:flex;gap:10px;flex-wrap:wrap}
+@media(max-width:560px){.pmodal .inner{padding:20px}}
 </style>
 </head>
 <body>
@@ -246,6 +272,12 @@ footer a:hover{color:#fff}
       <span>256 properties sold last year (STC)</span>
       <span>Free, no-obligation valuations</span>
     </div>
+    <div class="hero-review reveal">
+      <span class="stars">★★★★★</span>
+      <em>"Your knowledge was second to none and we would highly recommend you."</em>
+      <b>— Tracey, seller</b>
+      <a href="#reviews">Read client reviews ↓</a>
+    </div>
   </div>
 </div>
 
@@ -259,33 +291,8 @@ footer a:hover{color:#fff}
       </div>
       <a class="btn btn-line" href="#contact">Register for new listings</a>
     </div>
-    <div class="prop-grid">
-      <div class="prop-card reveal">
-        <div class="ph"><span class="tag">FOR SALE</span><img src="assets/prop1.jpg" alt="Family home for sale in East Grinstead"></div>
-        <div class="body"><h3>East Grinstead</h3><p>Full details, price and photos on the live site.</p><div class="cta">View details →</div></div>
-      </div>
-      <div class="prop-card reveal">
-        <div class="ph"><span class="tag">FOR SALE</span><img src="assets/prop2.jpg" alt="Mews house for sale in East Grinstead"></div>
-        <div class="body"><h3>East Grinstead</h3><p>Full details, price and photos on the live site.</p><div class="cta">View details →</div></div>
-      </div>
-      <div class="prop-card reveal">
-        <div class="ph"><span class="tag">FOR SALE</span><img src="assets/prop3.jpg" alt="Victorian house for sale in East Grinstead"></div>
-        <div class="body"><h3>East Grinstead</h3><p>Full details, price and photos on the live site.</p><div class="cta">View details →</div></div>
-      </div>
-      <div class="prop-card reveal">
-        <div class="ph"><span class="tag">FOR SALE</span><img src="assets/prop4.jpg" alt="Cottage for sale near East Grinstead"></div>
-        <div class="body"><h3>East Grinstead area</h3><p>Full details, price and photos on the live site.</p><div class="cta">View details →</div></div>
-      </div>
-      <div class="prop-card reveal">
-        <div class="ph"><span class="tag">FOR SALE</span><img src="assets/prop5.jpg" alt="Modern apartment for sale in East Grinstead"></div>
-        <div class="body"><h3>East Grinstead</h3><p>Full details, price and photos on the live site.</p><div class="cta">View details →</div></div>
-      </div>
-      <div class="prop-card reveal">
-        <div class="ph"><span class="tag">FOR SALE</span><img src="assets/prop6.jpg" alt="Contemporary home for sale in East Grinstead"></div>
-        <div class="body"><h3>East Grinstead</h3><p>Full details, price and photos on the live site.</p><div class="cta">View details →</div></div>
-      </div>
-    </div>
-    <p class="props-note">Preview note: photos are from your current listings. On the live website every property shows full details and updates automatically as your listings change.</p>
+    <div class="prop-grid" id="propGrid"></div>
+    <p class="props-note">Preview note: these are your real, current listings — photos, prices and descriptions taken from your website. On the live site they update automatically as your listings change.</p>
   </div>
 </section>
 
@@ -348,10 +355,11 @@ footer a:hover{color:#fff}
         <div class="founder"><b>Duncan Bewley</b><span>Owner &amp; founder</span></div>
       </div>
     </div>
-    <div class="testis">
-      <div class="testi reveal"><p>"Thank you so much for your help in getting us moving. You kept us up to date from start to finish which was a breath of fresh air."</p><b>— Maggie</b></div>
-      <div class="testi reveal"><p>"Thank you for your efforts of securing a sale on our property so quickly. We wish you continued success with your business."</p><b>— Mr &amp; Mrs Spencer</b></div>
-      <div class="testi reveal"><p>"THANK YOU. It is so great to deal with a local company — your knowledge was second to none and we would highly recommend you."</p><b>— Tracey</b></div>
+    <div class="testis" id="reviews">
+      <div class="testis-head"><span class="big-stars">★★★★★</span><span>What sellers say about Garnham H Bewley</span></div>
+      <div class="testi reveal"><div class="stars">★★★★★</div><p>"Thank you so much for your help in getting us moving. You kept us up to date from start to finish which was a breath of fresh air."</p><b>— Maggie, seller</b></div>
+      <div class="testi reveal"><div class="stars">★★★★★</div><p>"Thank you for your efforts of securing a sale on our property so quickly. We wish you continued success with your business."</p><b>— Mr &amp; Mrs Spencer, sellers</b></div>
+      <div class="testi reveal"><div class="stars">★★★★★</div><p>"THANK YOU. It is so great to deal with a local company — your knowledge was second to none and we would highly recommend you."</p><b>— Tracey, seller</b></div>
     </div>
   </div>
 </section>
@@ -415,6 +423,54 @@ document.getElementById('valForm').addEventListener('submit',function(e){
   e.preventDefault();
   this.innerHTML='<div style="text-align:center;padding:24px 4px"><div style="font-size:36px">✅</div><h3 style="font-size:19px;font-weight:800;color:#183760;margin-top:8px">Thank you!</h3><p style="font-size:14px;color:#8a8d95;margin-top:6px">We\'ve got your details and we\'ll call you back to arrange your free valuation.<br><small>(Preview demonstration — on the live site this goes straight to your inbox.)</small></p></div>';
 });
+
+// ---- nemovitosti: skutečná data z jejich webu (8. 7. 2026) ----
+const LISTINGS=[
+  {img:'assets/prop1.jpg',loc:'East Grinstead',price:'£199,500',beds:2,type:'First floor apartment',desc:'Situated in the heart of East Grinstead, this beautifully presented two-bedroom first floor apartment is ideally located within easy walking distance of the town centre and the station.'},
+  {img:'assets/prop2.jpg',loc:'East Grinstead',price:'£190,000',beds:1,type:'First floor apartment',desc:'A truly luxurious living experience in the heart of East Grinstead. Nestled on the first floor is a one double bedroom apartment with a stunning contemporary finish throughout.'},
+  {img:'assets/prop3.jpg',loc:'East Grinstead',price:'£180,000',beds:1,type:'First floor flat',desc:'One double bedroom first floor flat, located just minutes from the main line train station — ideal for commuters and first-time buyers alike.'},
+  {img:'assets/prop4.jpg',loc:'Felbridge',price:'£175,000',beds:1,type:'Retirement apartment (60+)',desc:'A beautifully spacious ground floor retirement apartment, exclusively available for those aged 60 and over, set in well-kept communal grounds.'},
+  {img:'assets/prop5.jpg',loc:'Lingfield',price:'£145,000',beds:2,type:'First floor retirement property',desc:'Two bedroom first floor retirement property which has been modernised to create bright, comfortable living close to the village amenities.'},
+  {img:'assets/prop6.jpg',loc:'Turners Hill',price:'£130,000',beds:1,type:'Park home',desc:'A spacious and excellently positioned one-bedroom park home, set within a wooded, well-maintained residential park.'}
+];
+const grid=document.getElementById('propGrid');
+LISTINGS.forEach((p,i)=>{
+  const el=document.createElement('div');
+  el.className='prop-card reveal';
+  el.innerHTML=`<div class="ph"><span class="tag">FOR SALE</span><img src="${p.img}" alt="${p.type} for sale in ${p.loc}"></div>
+    <div class="body"><h3>${p.price} · ${p.loc}</h3><p>${p.beds} bed ${p.type.toLowerCase()}</p><div class="cta">View details →</div></div>`;
+  el.addEventListener('click',()=>openModal(i));
+  grid.appendChild(el);
+});
+// modal
+const modal=document.createElement('div');
+modal.className='pmodal';
+modal.innerHTML=`<div class="backdrop"></div><div class="box">
+  <div class="photo"><span class="tag">FOR SALE</span><img alt=""><button class="close" aria-label="Close">✕</button></div>
+  <div class="inner">
+    <div class="price"></div>
+    <div class="meta"></div>
+    <p class="desc"></p>
+    <p class="note">Preview: details from your current listing. On the live website this page shows the full description, every photo, floorplan and a "Book a Viewing" form.</p>
+    <div class="actions">
+      <a class="btn btn-orange" href="tel:+441342410227">☎ Call about this property</a>
+      <a class="btn btn-line" href="mailto:eastgrinstead@garnhamhbewley.co.uk">I'm interested — e-mail us</a>
+    </div>
+  </div></div>`;
+document.body.appendChild(modal);
+function openModal(i){
+  const p=LISTINGS[i];
+  modal.querySelector('.photo img').src=p.img;
+  modal.querySelector('.price').textContent=p.price+' — '+p.loc;
+  modal.querySelector('.meta').innerHTML=`<span>🛏 ${p.beds} bedroom${p.beds>1?'s':''}</span><span>🏠 ${p.type}</span><span>📍 ${p.loc}</span>`;
+  modal.querySelector('.desc').textContent=p.desc;
+  modal.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeModal(){modal.classList.remove('open');document.body.style.overflow=''}
+modal.querySelector('.backdrop').addEventListener('click',closeModal);
+modal.querySelector('.close').addEventListener('click',closeModal);
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
 
 // reveal
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
