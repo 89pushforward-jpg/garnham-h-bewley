@@ -22,7 +22,11 @@
     "addressRegion": "West Sussex",
     "postalCode": "RH19 1EQ",
     "addressCountry": "GB"
-  }
+  },
+  "openingHoursSpecification": [
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "18:00"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "17:00"}
+  ]
 }
 </script>
 <style>
@@ -388,6 +392,7 @@ footer a:hover{color:#fff}
         <div class="cline"><span class="k">Office</span><span class="v">73–75 London Road,<br>East Grinstead, West Sussex RH19 1EQ</span></div>
         <div class="cline"><span class="k">Phone</span><span class="v"><a href="tel:+441342410227">01342 410 227</a></span></div>
         <div class="cline"><span class="k">E-mail</span><span class="v"><a href="mailto:eastgrinstead@garnhamhbewley.co.uk">eastgrinstead@garnhamhbewley.co.uk</a></span></div>
+        <div class="cline"><span class="k">Hours</span><span class="v">Mon–Fri 9:00am – 6:00pm<br>Saturday 9:00am – 5:00pm<br>Sunday closed</span></div>
         <div class="cline"><span class="k">Portals</span><span class="v">Rightmove · Zoopla · OnTheMarket</span></div>
         <div style="margin-top:26px">
           <a class="btn btn-orange" href="#valuation">Arrange a free valuation</a>
@@ -423,14 +428,25 @@ const burger=document.getElementById('burger'),navLinks=document.getElementById(
 burger.addEventListener('click',()=>navLinks.classList.toggle('open'));
 navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
 
-// jednoduchý stav kanceláře (Po–So přes den; přesné hodiny doplníme od klienta)
+// živý stav kanceláře — hodiny dle Google profilu: Po–Pá 9–18, So 9–17, Ne zavřeno
 (function(){
-  const parts=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/London',weekday:'short',hour:'numeric',hour12:false}).formatToParts(new Date());
+  const HOURS={Mon:[9,18],Tue:[9,18],Wed:[9,18],Thu:[9,18],Fri:[9,18],Sat:[9,17],Sun:null};
+  const parts=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/London',weekday:'short',hour:'numeric',minute:'numeric',hour12:false}).formatToParts(new Date());
   const get=t=>parts.find(p=>p.type===t)?.value;
-  const day=get('weekday'),h=Number(get('hour'));
-  const open=day!=='Sun'&&h>=9&&h<17.5;
-  const topDot=document.getElementById('topDot'),topStatus=document.getElementById('topStatus');
-  if(!open){topDot.classList.add('shut');topStatus.textContent='Office closed';document.getElementById('todayNote').textContent='— leave a message or e-mail us';}
+  const day=get('weekday'),now=Number(get('hour'))+Number(get('minute'))/60;
+  const t=HOURS[day],open=!!t&&now>=t[0]&&now<t[1];
+  const fmt=h=>{const hr=h%12===0?12:h%12;return hr+(h<12?'am':'pm')};
+  const topDot=document.getElementById('topDot'),topStatus=document.getElementById('topStatus'),note=document.getElementById('todayNote');
+  if(open){
+    topStatus.textContent='Open today';note.textContent='— until '+fmt(t[1])+', pop in or call';
+  }else{
+    topDot.classList.add('shut');topStatus.textContent='Office closed';
+    const order=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];let i=order.indexOf(day);
+    let msg='— leave a message or e-mail us';
+    if(t&&now<t[0]){msg='— opens today at '+fmt(t[0]);}
+    else{for(let s=1;s<=7;s++){const d=order[(i+s)%7],ht=HOURS[d];if(ht){msg='— opens '+(s===1?'tomorrow':d)+' at '+fmt(ht[0]);break}}}
+    note.textContent=msg;
+  }
 })();
 
 // valuation form (demo)
