@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Properties for Sale — Garnham H Bewley, East Grinstead</title>
-<meta name="description" content="All current properties for sale with Garnham H Bewley — East Grinstead's favourite independent estate agents. Call 01342 410 227.">
+<title>Our Community — Garnham H Bewley, East Grinstead</title>
+<meta name="description" content="Garnham H Bewley are proud to sponsor a number of worthwhile causes both abroad and in our home town of East Grinstead.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -29,24 +29,16 @@ header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.97);backdro
 .btn-line{background:transparent;border:1.5px solid var(--line);color:var(--navy)}
 .btn-line:hover{border-color:var(--orange)}
 .page-head{background:#fff;border-bottom:1px solid var(--line);padding:44px 0 36px}
-.page-head p{color:var(--muted);margin-top:8px;font-size:15.5px}
-.prop-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;padding:44px 0 64px}
-.prop-card{display:block;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff;transition:transform .2s,box-shadow .2s}
-.prop-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
-.prop-card .ph{position:relative;aspect-ratio:4/3;overflow:hidden}
-.prop-card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
-.prop-card:hover .ph img{transform:scale(1.05)}
-.prop-card .tag{position:absolute;top:12px;left:12px;background:var(--navy);color:#fff;font-size:11px;font-weight:700;padding:5px 11px;border-radius:6px}
-.prop-card .body{padding:18px 20px 20px}
-.prop-card h3{font-size:17px;color:var(--navy);font-weight:800}
-.prop-card p{font-size:13.5px;color:var(--muted);margin-top:4px}
-.prop-card .meta{margin-top:8px;font-size:12.5px;font-weight:700;color:var(--grey)}
-.prop-card .cta{margin-top:12px;font-size:13.5px;font-weight:700;color:#a06c00}
-.note{padding-bottom:40px;font-size:12.5px;color:var(--muted)}
+.page-head p{color:var(--muted);margin-top:8px;font-size:15.5px;max-width:640px}
+.causes{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;padding:44px 0 20px}
+.cause{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px 26px}
+.cause .where{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#a06c00;background:#fff7e2;border:1px solid #f3e0ae;border-radius:6px;padding:3px 9px;margin-bottom:12px}
+.cause h3{font-size:16.5px;font-weight:800;color:var(--navy)}
+.note{padding-bottom:52px;font-size:12.5px;color:var(--muted)}
 footer{background:var(--navy-deep);color:#93a3c0;padding:36px 0;font-size:13.5px}
 footer .container{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
 footer img{height:38px;background:#fff;padding:6px 10px;border-radius:8px}
-@media(max-width:860px){.prop-grid{grid-template-columns:1fr}}
+@media(max-width:860px){.causes{grid-template-columns:1fr}}
 @media(max-width:560px){.logo img{height:40px}.btn{padding:11px 16px;font-size:13px}}
 </style>
 </head>
@@ -66,16 +58,22 @@ footer img{height:38px;background:#fff;padding:6px 10px;border-radius:8px}
   <div class="container" style="display:flex;align-items:flex-end;justify-content:space-between;gap:18px;flex-wrap:wrap">
     <div>
       <span class="dots"><i></i><i></i><i></i></span>
-      <h1>Properties for sale</h1>
-      <p id="count">Current listings with Garnham H Bewley</p>
+      <h1>Our community</h1>
+      <p>Garnham H Bewley are proud to sponsor a number of worthwhile causes both abroad and in our home town of East Grinstead.</p>
     </div>
     <a class="btn btn-line" href="index.html">← Back to homepage</a>
   </div>
 </div>
 
 <div class="container">
-  <div class="prop-grid" id="grid"></div>
-  <p class="note">Preview note: real, current listings from your website — on the live site this page updates automatically from your Rezi account. · <a href="index.html" style="color:var(--blue);font-weight:700">← Back to homepage</a></p>
+  <div class="causes">
+    <div class="cause"><span class="where">East Grinstead</span><h3>Sackville School Sports Department</h3></div>
+    <div class="cause"><span class="where">Uganda</span><h3>Kitale School Uganda</h3></div>
+    <div class="cause"><span class="where">Ashurst Wood</span><h3>Ashurst Wood Primary School</h3></div>
+    <div class="cause"><span class="where">Felbridge</span><h3>Felbridge Primary School</h3></div>
+    <div class="cause"><span class="where">East Grinstead</span><h3>East Grinstead ESSO Station</h3></div>
+  </div>
+  <p class="note">Some of the people we've been lucky to be involved with. · <a href="index.html" style="color:var(--blue);font-weight:700">← Back to homepage</a></p>
 </div>
 
 <footer>
@@ -85,21 +83,5 @@ footer img{height:38px;background:#fff;padding:6px 10px;border-radius:8px}
   </div>
 </footer>
 
-<script src="data.js"></script>
-<script>
-const grid=document.getElementById('grid');
-document.getElementById('count').textContent=PROPERTIES.length+' current listings, highest price first';
-PROPERTIES.forEach(p=>{
-  const beds=p.kf['Bedrooms']??0,baths=p.kf['Bathrooms']??0,recs=p.kf['Receptions']??0;
-  const a=document.createElement('a');
-  a.className='prop-card';
-  a.href='property.html?id='+p.id;
-  a.innerHTML=`<div class="ph"><span class="tag">FOR SALE</span><img src="${p.photos[0]}" alt="Property for sale — ${p.addr}" loading="lazy"></div>
-    <div class="body"><h3>${p.price}</h3><p>${p.addr}</p>
-    <div class="meta">${beds>0?beds+' bed · ':''}${baths} bath${recs>0?' · '+recs+' reception':''}</div>
-    <div class="cta">View full details →</div></div>`;
-  grid.appendChild(a);
-});
-</script>
 </body>
 </html>
