@@ -82,6 +82,12 @@ header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.97);backdro
 .nav-links a:hover{color:var(--navy)}
 .nav-links a:hover::after{width:100%}
 .nav-cta{display:flex;align-items:center;gap:10px}
+.gg-reviews{display:flex;flex-direction:column;justify-content:center;gap:1px;padding:7px 14px;border:1.5px solid var(--line);border-radius:9px;line-height:1.15}
+.gg-reviews:hover{border-color:var(--orange)}
+.gg-reviews .r1{display:flex;align-items:center;gap:6px}
+.gg-reviews .r1 .star{color:var(--orange);font-size:18px;line-height:1}
+.gg-reviews .r1 b{color:var(--navy);font-size:17px}
+.gg-reviews .r2{font-size:12px;font-weight:600;color:var(--blue);text-decoration:underline;text-underline-offset:2px}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;font-size:14.5px;padding:13px 26px;border-radius:9px;border:none;cursor:pointer;transition:background .15s,color .15s,transform .12s;font-family:var(--font)}
 .btn:active{transform:scale(.97)}
 .btn-orange{background:var(--orange);color:#14294d;box-shadow:0 8px 22px rgba(255,180,36,.4)}
@@ -101,7 +107,7 @@ header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.97);backdro
   .burger{display:flex}
   .nav-cta .btn-line{display:none}
 }
-@media(max-width:560px){.logo img{height:40px}.nav-cta .btn-orange{padding:11px 16px;font-size:13px}}
+@media(max-width:560px){.logo img{height:40px}.nav-cta .btn-orange{padding:11px 16px;font-size:13px}.gg-reviews{display:none}}
 
 /* hero — velké foto pod lištou */
 .hero{position:relative;color:#fff}
@@ -252,6 +258,10 @@ footer a:hover{color:#fff}
       <a href="#contact">Contact</a>
     </nav>
     <div class="nav-cta">
+      <a class="gg-reviews" target="_blank" rel="noopener" href="https://maps.google.com/?cid=12912246884673987519" aria-label="4.7 stars from 68 reviews on Google">
+        <span class="r1"><span class="star">★</span><b>4.7</b></span>
+        <span class="r2">68 reviews on Google →</span>
+      </a>
       <a class="btn btn-line" href="tel:+441342410227">☎ Call</a>
       <a class="btn btn-orange" href="#valuation">Free Valuation</a>
       <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -263,10 +273,6 @@ footer a:hover{color:#fff}
 <div style="background:#fff;border-bottom:1px solid var(--line)">
   <div class="container" style="display:flex;align-items:center;gap:26px;padding-top:18px;padding-bottom:20px;flex-wrap:wrap;justify-content:center">
     <img src="assets/quality-badge.svg" alt="Gold Winner quality badge — award-winning estate agent, East Grinstead" style="height:104px;width:auto">
-    <a target="_blank" rel="noopener" href="https://maps.google.com/?cid=12912246884673987519" style="display:flex;flex-direction:column;gap:2px;margin-right:10px">
-      <span style="display:flex;align-items:center;gap:7px"><span style="color:var(--orange);font-size:20px;line-height:1">★</span><b style="color:var(--navy);font-size:17px">4.7</b></span>
-      <span style="text-decoration:underline;text-underline-offset:3px;font-weight:600;font-size:13.5px;color:var(--blue)">68 reviews on Google →</span>
-    </a>
     <div style="display:flex;gap:26px;flex-wrap:wrap;align-items:center">
       <div><b style="color:var(--navy);font-size:14.5px;display:block">British Property Awards 2021</b><span style="font-size:12.5px;color:var(--muted)">Gold Winner — Estate Agent in East Grinstead</span></div>
       <div style="width:1px;height:34px;background:var(--line)"></div>
