@@ -82,12 +82,6 @@ header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.97);backdro
 .nav-links a:hover{color:var(--navy)}
 .nav-links a:hover::after{width:100%}
 .nav-cta{display:flex;align-items:center;gap:10px}
-.gg-reviews{display:flex;flex-direction:column;justify-content:center;gap:1px;padding:7px 14px;border:1.5px solid var(--line);border-radius:9px;line-height:1.15}
-.gg-reviews:hover{border-color:var(--orange)}
-.gg-reviews .r1{display:flex;align-items:center;gap:6px}
-.gg-reviews .r1 .star{color:var(--orange);font-size:18px;line-height:1}
-.gg-reviews .r1 b{color:var(--navy);font-size:17px}
-.gg-reviews .r2{font-size:12px;font-weight:600;color:var(--blue);text-decoration:underline;text-underline-offset:2px}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;font-size:14.5px;padding:13px 26px;border-radius:9px;border:none;cursor:pointer;transition:background .15s,color .15s,transform .12s;font-family:var(--font)}
 .btn:active{transform:scale(.97)}
 .btn-orange{background:var(--orange);color:#14294d;box-shadow:0 8px 22px rgba(255,180,36,.4)}
@@ -107,7 +101,7 @@ header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.97);backdro
   .burger{display:flex}
   .nav-cta .btn-line{display:none}
 }
-@media(max-width:560px){.logo img{height:40px}.nav-cta .btn-orange{padding:11px 16px;font-size:13px}.gg-reviews{display:none}}
+@media(max-width:560px){.logo img{height:40px}.nav-cta .btn-orange{padding:11px 16px;font-size:13px}}
 
 /* hero — velké foto pod lištou */
 .hero{position:relative;color:#fff}
@@ -115,6 +109,11 @@ header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.97);backdro
 .hero .bg img{width:100%;height:100%;object-fit:cover}
 .hero .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,37,66,.72) 0%,rgba(15,37,66,.55) 55%,rgba(15,37,66,.78) 100%)}
 .hero .inner{position:relative;z-index:1;padding:110px 0 96px}
+.hero-reviews{display:inline-flex;align-items:center;gap:9px;margin-bottom:20px;font-size:14.5px;color:#fff}
+.hero-reviews .star{color:var(--orange);font-size:17px;line-height:1}
+.hero-reviews b{font-size:15.5px}
+.hero-reviews .txt{color:#e8edf6;border-bottom:1px solid rgba(255,255,255,.5);padding-bottom:1px}
+.hero-reviews:hover .txt{border-bottom-color:var(--orange)}
 .hero h1{font-size:clamp(34px,5vw,58px);max-width:17ch;color:#fff}
 .hero .sub{margin:20px 0 0;color:#d5ddec;font-size:17px;max-width:56ch}
 .searchbar{margin-top:38px;background:rgba(255,255,255,.97);border-radius:14px;box-shadow:0 24px 60px rgba(9,20,40,.4);padding:14px;display:grid;grid-template-columns:1.2fr 1fr 1fr auto;gap:10px}
@@ -258,10 +257,6 @@ footer a:hover{color:#fff}
       <a href="#contact">Contact</a>
     </nav>
     <div class="nav-cta">
-      <a class="gg-reviews" target="_blank" rel="noopener" href="https://maps.google.com/?cid=12912246884673987519" aria-label="4.7 stars from 68 reviews on Google">
-        <span class="r1"><span class="star">★</span><b>4.7</b></span>
-        <span class="r2">68 reviews on Google →</span>
-      </a>
       <a class="btn btn-line" href="tel:+441342410227">☎ Call</a>
       <a class="btn btn-orange" href="#valuation">Free Valuation</a>
       <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -287,6 +282,7 @@ footer a:hover{color:#fff}
 <div class="hero">
   <div class="bg"><img src="assets/hero.jpg" alt="Home for sale with Garnham H Bewley in East Grinstead"></div>
   <div class="container inner">
+    <a class="hero-reviews" target="_blank" rel="noopener" href="https://maps.google.com/?cid=12912246884673987519" aria-label="4.7 stars from 68 reviews on Google"><span class="star">★</span><b>4.7</b><span class="txt">68 reviews on Google →</span></a>
     <h1>East Grinstead's favourite estate agents.</h1>
     <p class="sub">Independent, established and run by the people whose names are above the door — Adam Garnham &amp; Duncan Bewley. Selling homes in East Grinstead and the surrounding villages.</p>
     <div class="searchbar reveal">
