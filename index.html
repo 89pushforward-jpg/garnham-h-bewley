@@ -202,9 +202,12 @@ header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.97);backdro
 
 /* footer */
 footer{background:var(--navy-deep);color:#93a3c0;padding:46px 0 100px;font-size:13.5px}
-footer .container{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+footer .fmain{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
 footer img{height:40px;width:auto;background:#fff;padding:6px 10px;border-radius:8px}
 footer a:hover{color:#fff}
+footer .foot-legal{margin-top:26px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);font-size:12px;color:#7f90ad;line-height:1.7}
+footer .foot-legal a{color:#c3cfe4}
+footer .foot-legal .links{margin-top:8px;display:flex;gap:16px;flex-wrap:wrap}
 
 /* mobile bar */
 .mobile-bar{position:fixed;bottom:0;left:0;right:0;z-index:70;display:none;grid-template-columns:1fr 1.3fr;background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.12);padding:10px 14px calc(10px + env(safe-area-inset-bottom));gap:10px}
@@ -415,9 +418,20 @@ footer a:hover{color:#fff}
 <!-- footer -->
 <footer>
   <div class="container">
-    <img src="assets/logo.jpg" alt="Garnham H Bewley">
-    <span>Independent estate agents · East Grinstead · <a href="community.html" style="text-decoration:underline">Our community</a></span>
-    <span>© 2026 Garnham H Bewley Ltd · <a href="tel:+441342410227">01342 410 227</a></span>
+    <div class="fmain">
+      <img src="assets/logo.jpg" alt="Garnham H Bewley">
+      <span>Independent estate agents · East Grinstead</span>
+      <span>© 2026 Garnham H Bewley Ltd · <a href="tel:+441342410227">01342 410 227</a></span>
+    </div>
+    <div class="foot-legal">
+      Garnham H Bewley Ltd — Registered in England, Company No. 06972947. Registered office: 73–75 London Road, East Grinstead, West Sussex, RH19 1EQ.<br>
+      Members of <a href="https://www.tpos.co.uk" target="_blank" rel="noopener">The Property Ombudsman (TPO)</a>.
+      <div class="links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="complaints.html">Complaints Procedure</a>
+        <a href="community.html">Our community</a>
+      </div>
+    </div>
   </div>
 </footer>
 

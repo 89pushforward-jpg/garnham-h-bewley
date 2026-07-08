@@ -53,8 +53,11 @@ header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.97);backdro
 .awards-mini span{font-size:12px;color:var(--muted)}
 .note{padding-bottom:44px;font-size:12.5px;color:var(--muted)}
 footer{background:var(--navy-deep);color:#93a3c0;padding:36px 0;font-size:13.5px}
-footer .container{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+footer .fmain{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
 footer img{height:38px;background:#fff;padding:6px 10px;border-radius:8px}
+footer .foot-legal{margin-top:24px;padding-top:18px;border-top:1px solid rgba(255,255,255,.12);font-size:12px;color:#7f90ad;line-height:1.7}
+footer .foot-legal a{color:#c3cfe4}
+footer .foot-legal .links{margin-top:8px;display:flex;gap:16px;flex-wrap:wrap}
 .mobile-bar{position:fixed;bottom:0;left:0;right:0;z-index:70;display:none;grid-template-columns:1fr 1.3fr;background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.12);padding:10px 14px calc(10px + env(safe-area-inset-bottom));gap:10px}
 .mobile-bar a{display:flex;align-items:center;justify-content:center;gap:7px;padding:13px 6px;font-weight:700;font-size:14px;border-radius:9px}
 .mobile-bar .call{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2)}
@@ -111,8 +114,19 @@ footer img{height:38px;background:#fff;padding:6px 10px;border-radius:8px}
 
 <footer>
   <div class="container">
-    <img src="assets/logo.jpg" alt="Garnham H Bewley">
-    <span>© 2026 Garnham H Bewley Ltd · 73–75 London Road, East Grinstead</span>
+    <div class="fmain">
+      <img src="assets/logo.jpg" alt="Garnham H Bewley">
+      <span>© 2026 Garnham H Bewley Ltd · 73–75 London Road, East Grinstead</span>
+    </div>
+    <div class="foot-legal">
+      Garnham H Bewley Ltd — Registered in England, Company No. 06972947. Registered office: 73–75 London Road, East Grinstead, West Sussex, RH19 1EQ.<br>
+      Members of <a href="https://www.tpos.co.uk" target="_blank" rel="noopener">The Property Ombudsman (TPO)</a>.
+      <div class="links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="complaints.html">Complaints Procedure</a>
+        <a href="community.html">Our community</a>
+      </div>
+    </div>
   </div>
 </footer>
 
